@@ -1,0 +1,354 @@
+\documentclass[10pt]{beamer}
+
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\usepackage{bm}
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+
+\newcommand{\del}[1]{\ensuremath{\frac{\partial}{\partial #1}}}
+\newcommand{\dell}[1]{\ensuremath{\frac{\partial^2}{\partial #1^2}}}
+
+\def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
+
+
+
+\title{Genetic load and efficacy of selection on admixed populations}
+\subtitle{A Diffusion Processes Approach}
+% \date{\today}
+\date{}
+\author{Jonatas Cesar}
+\institute{University of S\~ao Paulo \& University of Chicago}
+% \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Table of contents}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Quick Bio}
+
+\begin{frame}{\normalsize Statistical Mechanics of Interacting Bayesian Agents: Applications
+    to Moral Foundation Theory}
+  
+  \footnotesize
+  \begin{columns}
+    \begin{column}{0.65\textwidth}
+      \begin{alertblock}{MFT}
+        \begin{itemize}
+          \item Moral Matrix: \textit{Harm, Fairness, Ingroup, Authority, Purity}
+          \item Liberals are most sensitive to Harm and Fairness while
+            Conservatives are equally sensitive to all 5 moral dimensions
+        \end{itemize}
+      \end{alertblock}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \begin{itemize}
+          \item $\bm \omega_i$: agent moral vector 
+          \item $\bm x$: random issues 
+          \item $\mathcal H$: Cost of disagreement between agents
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \centering 
+  Socio-dynamic sketch:
+  \[
+    \bm \omega_i^{t + 1} = \bm \omega_i^{t} + 
+    \eta \bm \nabla 
+    \mathcal H (\bm \omega_i^t \cdot \bm x ^t, \bm \omega_j^t \cdot \bm x ^t)
+  \]
+
+  \includegraphics[width=0.45\textwidth]{./Figures/mf_usa}
+  \hspace{5pt}
+  \includegraphics[width=0.45\textwidth]{./Figures/beta_tight.pdf}
+  \let\thefootnote\relax\footnote{\tiny J. Cesar and N. Caticha, in prep}
+\end{frame}
+
+\begin{frame}{SUVREL: Supervised Variational Relevance Learning}
+
+  \begin{alertblock}{Objective}
+  Learning a metric tensor $g_{\mu\nu}$ on the feature space that minimizes
+  intra-groups distances and maximize inter-groups distances. 
+	\end{alertblock}
+  \[
+    E = \sum_{intra(i,j)} d_{ij} - \gamma \sum_{iter(i,j)} d_{ij}, 
+  \]
+  $d_{ij}$ is defined as a quadratic distance in the new space $X' = G X$ 
+
+  \includegraphics[width=\textwidth]{./Figures/suvrel_image.png}
+  \let\thefootnote\relax\footnote{M. Boareto, J. Cesar, V.B. Leite and
+    N. Caticha. IEEE/ACM Transactions in Computational Biology and
+    Bioinformatics (2015)}
+\end{frame}
+
+\section{Recent Projects on Popgen}
+
+\begin{frame}{Expression estimation and eQTL mapping of HLA genes}
+  \centering
+  \begin{minipage}{0.6\textwidth}
+  \includegraphics[width=\textwidth]{./Figures/method.png}
+  \end{minipage}
+  \hspace{5pt}
+  \begin{tiny}
+  \begin{tabular}{lc}
+    \hline
+    Gene & accuracy (\%) \\
+    \hline
+    A & 98.5  \\
+    B & 98.5  \\
+    C & 97.5  \\
+    DQB1 & 98.5  \\
+    DRB1 & 99.5  \\
+    \hline
+  \end{tabular}
+  \end{tiny}
+  \vfill
+
+  \begin{minipage}{0.5\textwidth}
+  \includegraphics[width=\textwidth]{./Figures/prop_mapped_divergence.png}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+  \includegraphics[width=\textwidth]{./Figures/correlations.png}
+  \end{minipage}
+\let\thefootnote\relax\footnote{V. Aguiar, J. Cesar, O. Deleanau, E.
+  Dermitzaskis, D. Meyer. under review}
+\end{frame}
+
+\begin{frame}{\small The effect of balancing selection on population
+    differentiation:\\ a study with HLA genes}
+  \centering
+  \begin{minipage}{0.43\textwidth}
+    \includegraphics[width=\textwidth]{./Figures/pw_fst.pdf}
+  \end{minipage}
+  \begin{minipage}{0.43\textwidth}
+    \includegraphics[width=\textwidth]{./Figures/fig_od.pdf}
+  \end{minipage}
+  \begin{minipage}{0.43\textwidth}
+    \includegraphics[width=\textwidth]{./Figures/bsel_x_neu_simple_1.png}
+  \end{minipage}
+  \begin{minipage}{0.43\textwidth}
+    \includegraphics[width=\textwidth]{./Figures/DFst_zoom.png}
+  \end{minipage}
+  \let\thefootnote\relax\footnote{D. Brandt, J. Cesar, J. Goudet, D. Meyer G3
+    (2018)}
+\end{frame}
+
+\begin{frame}{\small The cost of selection: how balancing selection at HLA
+    impacts  \\ their genomic neighbourhood}
+  \centering
+  \begin{minipage}{0.35\textwidth}
+    \includegraphics[width=\textwidth]{./Figures/htz_ALL.png}
+  \end{minipage}
+  \begin{minipage}{0.35\textwidth}
+    \includegraphics[width=\textwidth]{./Figures/freq_fold_peri.png}
+  \end{minipage}
+  \begin{minipage}{0.35\textwidth}
+    \includegraphics[width=\textwidth]{./Figures/load_Peri.png}
+  \end{minipage}
+  \begin{minipage}{0.35\textwidth}
+    \includegraphics[width=\textwidth]{./Figures/pval_null_hist.png}
+  \end{minipage}
+  \let\thefootnote\relax\footnote{J. Cesar, \textit{et. al.}, in prep}
+\end{frame}
+
+\section{Genetic Load and Efficacy of Selection on admixed populations}
+
+\begin{frame}{Genetic Load}
+  \begin{alertblock}{Definition}
+    Genetic load is the relative reduction in the population fitness compared
+    to the theoretical "perfectly adapted" genotype.
+  \end{alertblock}
+  \[
+    L = \frac{W_{max} - W}{W_{max}}
+  \]
+  Causes:
+  \begin{itemize}
+    \item \underline{Mutation Load}: Influx of new deleterious mutation
+    \item Change in environment
+    \item Inbreeding 
+    \item ...
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Equilibrium Rationale}
+  \begin{columns}
+  \begin{column}{0.65\textwidth}
+    \centering
+    \begin{footnotesize}
+      \begin{tabular}{cccc}
+        \\ \hline
+        Genotype & aa & aA & AA \\
+        Frequency & $(1 - x) ^2$ & $2 x ( 1 - x)$ & $x^2$ \\
+        Average Fitness & 1 & $1 - h s$ & $1 - s$ \\
+        Mutation Rate & $ a \xrightleftharpoons[u]{v} A $ & \\
+        \hline
+      \end{tabular}
+    \end{footnotesize}
+    \includegraphics[width=\textwidth]{./Figures/Kimura_1963.png}
+  \end{column}
+  \begin{column}{0.35\textwidth}
+    \begin{scriptsize}
+      \begin{tabular}{l}
+      Fitness \\ 
+      $W(x) = 1 - 2 hs x(1 - x) - s x^2$ \\
+      Eq. dist. of $x$ \\ 
+      $\phi(x) = C W^{2N} x^{4Nu -1 }(1 - x)^{4Nv - 1}$  \\
+      Genetic load \\ 
+      $\overline L = \frac{\int_0^1 dx (1 - W)\phi(x)}{\int_0^1 dx \phi(x)}$
+      \end{tabular}
+    \end{scriptsize}
+
+    \begin{block}{Small Populations}
+      Load is high since drift increases the frequency of deleterious
+      mutations.
+    \end{block}
+    \begin{block}{Large Populations}
+      Selection decreases the genetic load.\\
+      $\overline L \propto u$
+    \end{block}
+  \end{column}
+  \end{columns}
+  \let\thefootnote\relax\footnote{
+    \scriptsize M. Kimura, T. Maruyama \& J. Crow; The
+    Mutation Load in Small Populations. Genetics (1963)}
+\end{frame}
+
+\begin{frame}{\normalsize There are differences in mutation load between human
+    populations?}
+  \vfill
+  \includegraphics[width=0.8\textwidth]{./Figures/McCoy_Akey2016.png}
+  \Put(-50,280){\includegraphics[width=0.4\textwidth]{./Figures/Henn_pnas_map.png}}
+  \let\thefootnote\relax\footnote{R. McCoy \& J. Akey, Pnas 2016 \\
+    \hspace{3pt} B. Henn, \textit{et.al} Pnas 2016}
+\end{frame}
+
+\begin{frame}{It depends}
+  \vfill
+  \includegraphics[width=\textwidth]{./Figures/Henn_pnas.png}
+  \let\thefootnote\relax\footnote{B. Henn \textit{et.al} Pnas 2016}
+\end{frame}
+
+\begin{frame}{\normalsize But there are differences in the present day efficacy
+    of selection} 
+  \vfill
+  \centering
+  \includegraphics[width=0.8\textwidth]{./Figures/Gravel_efsel.png}
+  \let\thefootnote\relax\footnote{S. Gravel, Genetics 2016}
+\end{frame}
+
+\begin{frame}{Efficacy of Selection}
+  \begin{alertblock}{Definition}
+    The efficacy of selection is defined as the contribution of selection on
+    the population load change $\partial L / \partial t$.  
+  \end{alertblock}
+  \begin{block}{Derivation}
+    Given the average fitness $W = s[2h\mu_1 + (1 - 2h)\mu_2]$ where
+    $\mu_k \equiv \int_0^1 dx x^k \phi(x, t)$ we want to calculate 
+    \[
+      \frac{d}{dt} W= s[2h \dot \mu_1 + (1 - 2h) \dot \mu_2]
+    \]
+  \end{block}
+  using: 
+  $\dot \mu_k = \del t \int_0^1 dx x^k \phi(x, t) = \int_0^1 dx x^k \del t \phi(x, t)$
+  \let\thefootnote\relax\footnote{S. Gravel, Genetics 2016}
+\end{frame}
+
+\begin{frame}{Derivation outline}
+  \begin{alertblock}{Diffusion Approximation}
+    Let $\phi(x,t)dx$ the expected number of alleles with frequency between $x$
+    and $x + dx$ at time $t$.
+    \begin{align}
+      \del t \phi(x,t) & \approx \frac{1}{4N} \dell x x(1-x) \phi(x,t) 
+      & &\bigg\} \mathrm{drift}
+      \nonumber \\ 
+      &- s \del x [h + ( 1 - 2h)x]x(1-x) \phi(x,t) 
+      & &\bigg\} \mathrm{selection}
+      \nonumber \\
+      &+ 2Nu\delta\left(x - \frac{1}{2N}\right)
+      & &\bigg\} \mathrm{mutation}
+    \end{align}
+  \end{alertblock}
+  \begin{block}{Change in moments ($ k > 0$)}
+    \[
+      \dot \mu_k = \frac{k(k-1)}{8N} \pi_{k-1} + 
+        \frac{sk}{4} \Gamma_{k,h} +
+        \frac{u}{(2N)^{k-1}}
+    \]
+    where $\Gamma_{k,h} = 2[h\pi_k + (1 - 2h) \pi_{k+1}]$ and $\pi_k=(\mu_k - \mu_{k + 1})$
+  \end{block}
+  \let\thefootnote\relax\footnote{S. Gravel, Genetics 2016}
+\end{frame}
+
+\begin{frame}{Single Population Efficacy of Selection}
+  \begin{block}{Change in Fitness}
+  \begin{align}
+    \dot W &= \dot W_u + \dot W_N + \dot W_s
+    \nonumber \\
+    &= s \big\{
+    \underbrace{2hu}_\text{mutation} + 
+    \underbrace{\frac{(1 - 2h)\pi_1}{4N}}_\text{drift} + 
+    \underbrace{\frac{s}{2}[h\Gamma_{1,h}+(1-2h)\Gamma_{2,h}}_\text{selection}]
+      \big\}
+  \end{align}
+  \end{block}
+\end{frame}
+
+\begin{frame}{\normalsize Efficacy of selection of Admixed populations} 
+  \vfill
+  \centering
+  \[
+    \dot W_{s,admix} > \sum_i p_i \dot W_{s,i}
+  \]
+  \includegraphics[width=0.8\textwidth]{./Figures/Gravel_efsel_admix.png}
+  \let\thefootnote\relax\footnote{S. Gravel, Genetics 2016}
+\end{frame}
+
+\begin{frame}{Single Pulse Admixture}
+
+\begin{alertblock}{Allele Frequency Distribution}
+  \[
+    \phi(x_3) = \int_0^1 \int_0^1 dx_1 dx_2 \phi(x_1, x_2) 
+    \delta(x_3 - \alpha_1 x_1 - \alpha_2 x_2) 
+  \] 
+\end{alertblock}
+
+\begin{block}{Moments of The Admixed Population}
+  \begin{align}
+    \mu_{3,k} &= \int_0^1 \int_0^1\int_0^1dx_1 dx_2 dx_3 x_3^k \phi(x_1, x_2) 
+    \delta(x_3 - \alpha_1 x_1 - \alpha_2 x_2)
+    \nonumber \\
+    &= \int_0^1 \int_0^1dx_1 dx_2 (\alpha_1 x_1 +  \alpha_2 x_2) ^k \phi(x_1, x_2)
+    \nonumber \\
+    &= \sum_{j=1}^k\binom{j}{k} \alpha_1^j\alpha_2^{k -j} 
+    \int_0^1 \int_0^1dx_1 dx_2 x_1^jx_2^{k -j} \phi(x_1, x_2)
+    \nonumber \\
+    &= \sum_{j=1}^k\binom{j}{k} \alpha_1^j\alpha_2^{k -j} 
+    \mu_{j,k-j}^{1,2}
+  \end{align}
+\end{block}
+  
+\end{frame}
+
+\begin{frame}{\normalsize Present day efficacy
+    of selection - CADD > 2} 
+  \vfill
+  \centering
+  \includegraphics[width=0.8\textwidth]{./Figures/Gravel_efsel_CADD.png}
+  \let\thefootnote\relax\footnote{S. Gravel, Genetics 2016}
+\end{frame}
+
+\end{document}
