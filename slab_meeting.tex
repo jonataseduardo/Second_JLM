@@ -22,7 +22,6 @@
 \def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
 
 
-
 \title{Genetic load and efficacy of selection on admixed populations}
 \subtitle{A Diffusion Processes Approach}
 % \date{\today}
@@ -40,132 +39,7 @@
   \tableofcontents[hideallsubsections]
 \end{frame}
 
-\section{Quick Bio}
-
-\begin{frame}{\normalsize Statistical Mechanics of Interacting Bayesian Agents: Applications
-    to Moral Foundation Theory}
-  
-  \footnotesize
-  \begin{columns}
-    \begin{column}{0.65\textwidth}
-      \begin{alertblock}{MFT}
-        \begin{itemize}
-          \item Moral Matrix: \textit{Harm, Fairness, Ingroup, Authority, Purity}
-          \item Liberals are most sensitive to Harm and Fairness while
-            Conservatives are equally sensitive to all 5 moral dimensions
-        \end{itemize}
-      \end{alertblock}
-    \end{column}
-    \begin{column}{0.45\textwidth}
-      \begin{itemize}
-          \item $\bm \omega_i$: agent moral vector 
-          \item $\bm x$: random issues 
-          \item $\mathcal H$: Cost of disagreement between agents
-      \end{itemize}
-    \end{column}
-  \end{columns}
-  \centering 
-  Socio-dynamic sketch:
-  \[
-    \bm \omega_i^{t + 1} = \bm \omega_i^{t} + 
-    \eta \bm \nabla 
-    \mathcal H (\bm \omega_i^t \cdot \bm x ^t, \bm \omega_j^t \cdot \bm x ^t)
-  \]
-
-  \includegraphics[width=0.45\textwidth]{./Figures/mf_usa}
-  \hspace{5pt}
-  \includegraphics[width=0.45\textwidth]{./Figures/beta_tight.pdf}
-  \let\thefootnote\relax\footnote{\tiny J. Cesar and N. Caticha, in prep}
-\end{frame}
-
-\begin{frame}{SUVREL: Supervised Variational Relevance Learning}
-
-  \begin{alertblock}{Objective}
-  Learning a metric tensor $g_{\mu\nu}$ on the feature space that minimizes
-  intra-groups distances and maximize inter-groups distances. 
-	\end{alertblock}
-  \[
-    E = \sum_{intra(i,j)} d_{ij} - \gamma \sum_{iter(i,j)} d_{ij}, 
-  \]
-  $d_{ij}$ is defined as a quadratic distance in the new space $X' = G X$ 
-
-  \includegraphics[width=\textwidth]{./Figures/suvrel_image.png}
-  \let\thefootnote\relax\footnote{M. Boareto, J. Cesar, V.B. Leite and
-    N. Caticha. IEEE/ACM Transactions in Computational Biology and
-    Bioinformatics (2015)}
-\end{frame}
-
-\section{Recent Projects on Popgen}
-
-\begin{frame}{Expression estimation and eQTL mapping of HLA genes}
-  \centering
-  \begin{minipage}{0.6\textwidth}
-  \includegraphics[width=\textwidth]{./Figures/method.png}
-  \end{minipage}
-  \hspace{5pt}
-  \begin{tiny}
-  \begin{tabular}{lc}
-    \hline
-    Gene & accuracy (\%) \\
-    \hline
-    A & 98.5  \\
-    B & 98.5  \\
-    C & 97.5  \\
-    DQB1 & 98.5  \\
-    DRB1 & 99.5  \\
-    \hline
-  \end{tabular}
-  \end{tiny}
-  \vfill
-
-  \begin{minipage}{0.5\textwidth}
-  \includegraphics[width=\textwidth]{./Figures/prop_mapped_divergence.png}
-  \end{minipage}
-  \begin{minipage}{0.45\textwidth}
-  \includegraphics[width=\textwidth]{./Figures/correlations.png}
-  \end{minipage}
-\let\thefootnote\relax\footnote{V. Aguiar, J. Cesar, O. Deleanau, E.
-  Dermitzaskis, D. Meyer. under review}
-\end{frame}
-
-\begin{frame}{\small The effect of balancing selection on population
-    differentiation:\\ a study with HLA genes}
-  \centering
-  \begin{minipage}{0.43\textwidth}
-    \includegraphics[width=\textwidth]{./Figures/pw_fst.pdf}
-  \end{minipage}
-  \begin{minipage}{0.43\textwidth}
-    \includegraphics[width=\textwidth]{./Figures/fig_od.pdf}
-  \end{minipage}
-  \begin{minipage}{0.43\textwidth}
-    \includegraphics[width=\textwidth]{./Figures/bsel_x_neu_simple_1.png}
-  \end{minipage}
-  \begin{minipage}{0.43\textwidth}
-    \includegraphics[width=\textwidth]{./Figures/DFst_zoom.png}
-  \end{minipage}
-  \let\thefootnote\relax\footnote{D. Brandt, J. Cesar, J. Goudet, D. Meyer G3
-    (2018)}
-\end{frame}
-
-\begin{frame}{\small The cost of selection: how balancing selection at HLA
-    impacts  \\ their genomic neighbourhood}
-  \centering
-  \begin{minipage}{0.35\textwidth}
-    \includegraphics[width=\textwidth]{./Figures/htz_ALL.png}
-  \end{minipage}
-  \begin{minipage}{0.35\textwidth}
-    \includegraphics[width=\textwidth]{./Figures/freq_fold_peri.png}
-  \end{minipage}
-  \begin{minipage}{0.35\textwidth}
-    \includegraphics[width=\textwidth]{./Figures/load_Peri.png}
-  \end{minipage}
-  \begin{minipage}{0.35\textwidth}
-    \includegraphics[width=\textwidth]{./Figures/pval_null_hist.png}
-  \end{minipage}
-  \let\thefootnote\relax\footnote{J. Cesar, \textit{et. al.}, in prep}
-\end{frame}
-
-\section{Genetic Load and Efficacy of Selection on admixed populations}
+\section{Genetic Load and Efficacy of Selection}
 
 \begin{frame}{Genetic Load}
   \begin{alertblock}{Definition}
@@ -238,8 +112,11 @@
 
 \begin{frame}{It depends}
   \vfill
-  \includegraphics[width=\textwidth]{./Figures/Henn_pnas.png}
-  \let\thefootnote\relax\footnote{B. Henn \textit{et.al} Pnas 2016}
+  \includegraphics[width=\textwidth]{./Figures/Henn_NR_load.pdf}
+  \let\thefootnote\relax\footnote{B. Henn \textit{et.al} Nature Review 2016: 
+    for snps with GERP 2:4, 4:6 and  $>$6 where assigned $s = -4.5 \times
+    10^{-4}$,  $s = -4.5 \times 10^{-3}$ and  $s = -1.0 \times 10^{-1}$ using
+    Boyko et al DFE}
 \end{frame}
 
 \begin{frame}{\normalsize But there are differences in the present day efficacy
@@ -305,6 +182,21 @@
       \big\}
   \end{align}
   \end{block}
+  \begin{alertblock}{Efficacy of Selection}
+  \begin{itemize}
+    \item Fit Efficacy (from Fitness increase theorem)
+    \[ 
+      \dot W_s = \frac{s^2}{2}h\Gamma_{1,h}+(1-2h)\Gamma_{2,h}
+    \]
+
+  \item Morton Efficacy (from Morton, Crow and Mueller mutational damage)
+    \[ 
+      \dot \mu_1 = \frac{s^2}{2}h\Gamma_{1,h}
+    \]
+  \end{itemize}
+  \end{alertblock}
+
+  \let\thefootnote\relax\footnote{where $\Gamma_{k,h} = 2[h\pi_k + (1 - 2h) \pi_{k+1}]$ and $\pi_k=(\mu_k - \mu_{k + 1})$}
 \end{frame}
 
 \begin{frame}{\normalsize Efficacy of selection of Admixed populations} 
@@ -344,11 +236,75 @@
 \end{frame}
 
 \begin{frame}{\normalsize Present day efficacy
-    of selection - CADD > 2} 
+    of selection - CADD $>$ 2} 
   \vfill
   \centering
   \includegraphics[width=0.8\textwidth]{./Figures/Gravel_efsel_CADD.png}
   \let\thefootnote\relax\footnote{S. Gravel, Genetics 2016}
+\end{frame}
+
+\section{Diffusion simulation}
+\begin{frame}[t]{Out of Africa Simulation}
+  \vfill
+  \centering
+  \includegraphics[width=0.8\textwidth]{./Figures/moments_simul.png}
+  \let\thefootnote\relax\footnote{Jouganous, Genetics 2017}
+\end{frame}
+
+\begin{frame}[t]{Genetic Load}
+  \vfill
+  \centering
+  \includegraphics[width=0.8\textwidth]{./Figures/load.png}
+\end{frame}
+
+\begin{frame}[t]{Number of deleterious mutations}
+  \vfill
+  \centering
+  \includegraphics[width=0.8\textwidth]{./Figures/mu_1.png}
+\end{frame}
+
+\begin{frame}[t]{Nucleotide diversity}
+  \vfill
+  \centering
+  \includegraphics[width=0.8\textwidth]{./Figures/pi.png}
+\end{frame}
+
+
+\begin{frame}[t]{Fit efficacy}
+  \vfill
+  \centering
+  \includegraphics[width=0.8\textwidth]{./Figures/fit.png}
+\end{frame}
+
+
+\begin{frame}[t]{Morton Efficacy}
+  \vfill
+  \centering
+  \includegraphics[width=0.8\textwidth]{./Figures/morton.png}
+\end{frame}
+
+\section{Further Steps}
+
+\begin{frame}[t]{From near to not so near future}
+  \begin{itemize}
+    \item More realistic simulations with Slim3
+      \begin{itemize}
+        \item Recombination
+        \item Distribution of Fitness Effects
+        \item Dominance models
+      \end{itemize}
+    \item Real data analysis
+      \begin{itemize}
+        \item 1000G 
+        \item GnomAD 
+        \item AbraOM (1.2K Brazilians)
+      \end{itemize}
+    \item Impact of dominance and admixture on GWAS
+      \begin{itemize}
+        \item Eyre-Walker (2010)   
+        \item Simons (2017)
+      \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \end{document}
